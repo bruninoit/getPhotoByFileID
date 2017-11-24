@@ -18,6 +18,7 @@ function curlRequest($url, $data = [])
 
 function sm($chat_id, $text)
 {
+    global $api;
     $args = [];
     if (empty($chat_id) || empty($text)) {
         return false;
@@ -32,7 +33,7 @@ $update = json_decode($content, true);
 unset($content);
 
 if ($update['message']['photo']) {
-    sm($update['message']['chat']['id'], "https://grouphelp.top/channel/api/?file_id=".$update['message']['photo'][count($update['message']['photo'])-1]['file_id']);
+    sm($update['message']['chat']['id'], "$baseUrl?file_id=".$update['message']['photo'][count($update['message']['photo'])-1]['file_id']);
 } else {
     sm($update['message']['chat']['id'], "Mandami una foto");
 }

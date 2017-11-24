@@ -1,2 +1,3 @@
 <?php
 $api = "botTOKENFROMBOTFATHER"; //take your from @botfather
+$baseUrl = "https://example.com/getPhotoByFileID/";
